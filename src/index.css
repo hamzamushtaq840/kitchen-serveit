@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  font-family: "Outfit", sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif !important;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--theme-primary);
+}
+input[type="radio"] {
+  accent-color: var(--theme-primary);
+}
+
+.container1 {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container1::-webkit-scrollbar {
+  display: none; 
+}
+
+@media screen and (max-width: 576px) {
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* Adjust the bounce height as needed */
+  }
+}
+
+.arrow {
+  animation: bounce 1.5s infinite;
+}
+
+.elementToFadeInAndOut {
+    opacity: 1;
+    animation: fade 2s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  20% { opacity: 0.3; }
+  40% { opacity: 0.5; }
+  60% { opacity: 0.8; }
+  80% { opacity: 0.5; }
+  90% { opacity: 0.3; }
+  to { opacity: 0; }
+}
+
+.qr-reader {
+  width: 100%;
+  height: 60vh;
+  margin: 0 auto;
+  position: relative;
+  padding: 60px 0px 80px 0px;
+}
+
+.qr-reader video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.qr-reader .qr-box {
+  width: 100% !important;
+  left: 0 !important;
+}
+
+.qr-reader .qr-frame {
+  position: absolute;
+  fill: none;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
